@@ -1,0 +1,43 @@
+/* =========================================================
+   LAPORAN USER -> KOORDINATOR & ADMIN
+   (memakai ulang kelas tiket.css: tk-badge, tk-prio, kv, timeline, tk-grid)
+========================================================= */
+.ur-cat { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-soft); margin-top: 4px; }
+.ur-cat svg { width: 14px; height: 14px; }
+.ur-subject { font-weight: 600; }
+
+/* isi laporan */
+.ur-msg {
+    margin-top: 14px; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--border);
+    background: var(--bg); font-size: 14px; line-height: 1.6; overflow-wrap: anywhere;
+}
+
+/* tanggapan petugas (terlihat oleh pelapor) */
+.ur-reply {
+    display: flex; gap: 12px; margin-top: 16px; padding: 14px 16px; border-radius: var(--radius);
+    background: var(--primary-50); border: 1px solid var(--primary-100);
+}
+.ur-reply > svg { flex: 0 0 20px; width: 20px; height: 20px; color: var(--primary); margin-top: 2px; }
+.ur-reply strong { display: block; font-size: 13px; margin-bottom: 2px; }
+.ur-reply p { font-size: 14px; line-height: 1.55; overflow-wrap: anywhere; }
+
+/* belum dibaca / ada pembaruan */
+tr.ur-unread td { background: var(--primary-50); }
+tr.ur-unread .ur-subject { font-weight: 800; }
+.ur-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--red); vertical-align: middle; margin-left: 4px; }
+
+.tl-response { background: var(--primary); }
+.tl-ticket   { background: var(--orange); }
+
+.ur-table td:nth-child(3) { min-width: 240px; }
+
+/* kartu di dashboard */
+.ur-dash .activity-item { border-radius: var(--radius); }
+.ur-dash .ur-more { margin-top: 6px; }
+.ur-count-pill { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 11px; background: var(--red); color: #fff; font-size: 12px; font-weight: 800; margin-left: 6px; }
+
+.ur-dash { margin-bottom: 22px; }
+.ur-dash .ur-item { align-items: center; }
+.ur-dash .ur-item .activity-content { flex: 1; }
+.ur-dash .ur-item .tk-badge { flex-shrink: 0; }
+.ur-dash .empty.small { padding: 18px 0 6px; }

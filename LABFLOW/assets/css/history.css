@@ -1,0 +1,22 @@
+/* =========================================================
+   RIWAYAT
+========================================================= */
+.hist-chips { margin-bottom: 18px; }
+.hist-chips .chip { text-decoration: none; }
+
+.history-card { padding: 8px 22px 14px; }
+.result-info { padding: 14px 0 6px; font-size: 13px; color: var(--text-soft); }
+.history-table td { font-size: 14px; }
+.history-table .nowrap { white-space: nowrap; }
+.history-table .soft { color: var(--text-soft); }
+
+.tag-pc_issue   { background: var(--red-bg);       color: var(--red); }
+.tag-pc_update  { background: #e0f2fe;             color: #0284c7; }
+.tag-stock_in   { background: var(--primary-100);  color: var(--primary-700); }
+.tag-stock_out  { background: var(--orange-bg);    color: var(--orange); }
+.tag-lab_status { background: var(--yellow-bg);    color: var(--yellow); }
+.tag-user_mgmt  { background: var(--purple-bg);    color: var(--purple); }
+.tag-login      { background: var(--gray-bg);      color: var(--text-soft); }
+.tag-ticket { background: var(--yellow-bg); color: var(--yellow); }
+.tag-asset  { background: var(--primary-100); color: var(--primary-700); }
+.tag-system { background: var(--gray-bg); color: var(--text-soft); }

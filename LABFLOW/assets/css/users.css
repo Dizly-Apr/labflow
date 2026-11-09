@@ -1,0 +1,84 @@
+/* =========================================================
+   KELOLA USER + PROFIL
+========================================================= */
+.users-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+
+.pw-wrap { position: relative; }
+.pw-wrap .input { padding-right: 46px; }
+.pw-toggle { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; color: var(--text-mute); transition: all .15s; }
+.pw-toggle:hover { background: var(--gray-bg); color: var(--text); }
+.pw-toggle svg { width: 18px; height: 18px; }
+
+/* pilihan role */
+.role-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.role-card { position: relative; cursor: pointer; margin: 0; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.role-card input { position: absolute; opacity: 0; pointer-events: none; }
+.role-card > span { display: block; height: 100%; padding: 13px; border: 1.5px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); transition: all .18s var(--ease); }
+.role-card > span svg { width: 20px; height: 20px; color: var(--text-mute); display: block; margin-bottom: 8px; transition: color .18s; }
+.role-card strong { display: block; font-size: 13px; color: var(--text); text-transform: none; letter-spacing: 0; }
+.role-card small { display: block; font-size: 11px; color: var(--text-soft); margin-top: 3px; line-height: 1.4; }
+.role-card:hover > span { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
+.role-card input:checked + span { border-color: var(--primary); background: var(--primary-50); box-shadow: 0 0 0 3px rgba(40,124,240,.14); }
+.role-card input:checked + span svg { color: var(--primary); }
+.role-card input:focus-visible + span { outline: 3px solid rgba(40,124,240,.45); outline-offset: 2px; }
+
+/* ringkasan */
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.metric { padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--border); background: #fafbfd; }
+.metric strong { display: block; font-size: 26px; line-height: 1.15; letter-spacing: -.5px; }
+.metric span { font-size: 13px; color: var(--text-soft); }
+.metric.blue { background: var(--primary-50); border-color: var(--primary-100); }
+.metric.blue strong { color: var(--primary-700); }
+
+/* daftar user */
+.user-list { margin-top: 8px; }
+.user-row { display: flex; align-items: center; gap: 13px; padding: 13px 8px; margin: 0 -8px; border-bottom: 1px solid var(--border); border-radius: 10px; transition: background .15s var(--ease), opacity .2s; }
+.user-row:last-child { border-bottom: none; }
+.user-row:hover { background: #f7f9fc; }
+.user-row.editing { background: var(--primary-50); }
+.user-row.inactive .user-info, .user-row.inactive .avatar { opacity: .55; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; overflow: hidden; display: grid; place-items: center; background: var(--primary-100); color: var(--primary-700); font-weight: 700; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.user-info { flex: 1; min-width: 0; }
+.user-info strong { display: block; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.user-info strong small { font-weight: 500; color: var(--primary); }
+.user-info span { display: block; font-size: 12px; color: var(--text-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.role-pill { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.role-admin { background: var(--primary-100); color: var(--primary-700); }
+.role-coordinator { background: var(--green-bg); color: #15803d; }
+.role-user { background: var(--gray-bg); color: var(--text-soft); }
+.row-actions { display: flex; gap: 6px; }
+.empty-note { color: var(--text-mute); text-align: center; padding: 28px 0; }
+
+/* ---------- profil ---------- */
+.photo-box { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.avatar-lg {
+    position: relative; width: 116px; height: 116px; border-radius: 50%; flex-shrink: 0; overflow: hidden;
+    display: grid; place-items: center; font-size: 44px; font-weight: 700;
+    background: var(--primary-100); color: var(--primary-700);
+    border: 4px solid #fff; box-shadow: 0 0 0 2px var(--primary-100), var(--shadow);
+    cursor: pointer; transition: transform .2s var(--ease);
+}
+.avatar-lg:hover { transform: scale(1.04); }
+.avatar-lg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar-lg .cam { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(15,23,42,.5); color: #fff; opacity: 0; transition: opacity .2s; }
+.avatar-lg:hover .cam { opacity: 1; }
+.avatar-lg .cam svg { width: 26px; height: 26px; }
+.photo-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.photo-hint { font-size: 12px; color: var(--text-mute); line-height: 1.5; }
+.me-row { display: flex; align-items: center; gap: 12px; margin-top: 22px; padding: 14px 16px; background: #f7f9fc; border-radius: var(--radius); }
+.me-row .user-info strong { font-size: 15px; }
+
+/* kekuatan password */
+.strength { height: 6px; background: var(--gray-bg); border-radius: 4px; margin-top: 9px; overflow: hidden; }
+.strength i { display: block; height: 100%; width: 0; border-radius: 4px; transition: width .3s var(--ease), background .3s; }
+.strength-label { font-size: 12px; color: var(--text-mute); margin-top: 5px; min-height: 18px; }
+
+/* editor foto */
+#cropCanvas { display: block; width: 100%; max-width: 320px; aspect-ratio: 1; margin: 0 auto; border-radius: 14px; background: #111827; cursor: grab; touch-action: none; }
+#cropCanvas.dragging { cursor: grabbing; }
+.crop-zoom { display: flex; align-items: center; gap: 10px; margin: 16px auto 0; max-width: 320px; }
+.crop-zoom input[type=range] { flex: 1; accent-color: var(--primary); }
+
+@media (max-width: 1100px) { .users-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .role-options { grid-template-columns: 1fr; } .metric strong { font-size: 22px; } }
